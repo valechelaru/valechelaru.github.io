@@ -3,7 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://valentinchelaru.com/about/</loc>
+  </url>
+  
+  <url>
     <loc>https://valentinchelaru.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://valentinchelaru.com/post/first/</loc>
+  </url>
+  
+  <url>
+    <loc>https://valentinchelaru.com/post/</loc>
+  </url>
+  
+  <url>
+    <loc>https://valentinchelaru.com/post/second/</loc>
   </url>
   
   <url>
