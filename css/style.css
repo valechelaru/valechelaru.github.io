@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Academicons';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src:url('../fonts/academicons.eot');
+    src:url('../fonts/academicons.eot') format('embedded-opentype'),
+        url('../fonts/academicons.ttf') format('truetype'),
+        url('../fonts/academicons.woff') format('woff'),
+        url('../fonts/academicons.svg') format('svg');
+  }
+  
+  
+  * {
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+  }
+  
+  
+  body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overflow-x: hidden;
+      vertical-align: initial;
+      font-family: Helvetica, sans-serif;
+      font-size: 100%;
+      background-color: #181818;
+  }
+  
+  nav, main, footer, aside { 
+      position: relative;
+      width: 650px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+  }
+  
+  nav {
+      font-family: Academicons, serif;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1;
+      margin: 35px 0px 40px 0px;
+  }
+  
+  main { margin: 0px 0px 80px 0px; }
+  
+  footer, aside {
+      margin: 0px 0px 80px 0px;
+  }
+  
+  h1 {
+      font-family: Academicons, serif;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 1.4;
+      margin: 0px 0px 25px 0px;
+  }
+  
+  hr {
+      border: none;
+      margin: 0;
+      margin: 0px 0px 40px 0px;
+  }
+  
+  p { 
+      font-family: Helvetica, sans-serif;
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 0px 0px 40px 0px;
+  }
+  
+  a { text-decoration: none; cursor: pointer; padding-bottom: 1px; }
+  a:hover { text-decoration: none; }
+  a:active { text-decoration: none; }
+  a:visited { text-decoration: none; }
+  
+  ol { position: relative; columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style: none; margin: 0px 0px 40px 0px; padding: 0; font-size: 19px; font-family: Helvetica, sans-serif; }
+  ol li { line-height: 1.4; margin: 0px 0px 20px 0px; padding: 0px 100px 0px 0px;}
+  
+  ul { list-style: none; margin: 0px 0px 35px 0px; padding: 0; font-size: 19px; font-family: Helvetica, sans-serif;}
+  ul li { line-height: 1.4; margin: 0px 0px 20px 0px; }
+  
+  figure { position: relative; width: 100%; margin: 0; margin: 0px 0px 40px 0px; }
+  img { position: relative; width: 100%; height: auto;}
+  figcaption { position: relative; margin-top: 10px; font-family: Helvetica, sans-serif; font-size: 19px; }
+  
+  table {
+      position: relative;
+      width: 100%;
+      font-size: 48px;
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 0px 0px 40px 0px;
+  }
+  
+  td {
+      width: 25%;
+      vertical-align: top;
+  }
+  
+  ::selection { background: white; }
+  ::-moz-selection { background: white; }
+  
+  
+  @media screen and (max-width: 700px) {
+      nav, main, footer, aside {
+          width: calc(100% - 30px);
+      }
+  
+      nav {
+          font-size: 30px;
+          margin: 20px 0px 40px 0px;
+      }
+  
+      h1 { font-size: 30px; }
+  
+      p { font-size: 17px; }
+  
+      table { font-size: 12px; }
+  
+      figcaption { font-family: Helvetica, sans-serif; font-size: 17px; }
+  }

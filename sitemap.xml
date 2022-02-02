@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://valechelaru.github.io/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://valechelaru.github.io/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://valechelaru.github.io/post/first/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://valechelaru.github.io/post/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://valechelaru.github.io/post/second/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://valechelaru.github.io/tags/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://valechelaru.github.io/</loc>
   </url>
-  
 </urlset>
