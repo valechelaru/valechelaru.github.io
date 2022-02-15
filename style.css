@@ -85,12 +85,12 @@ nav {
     text-align: center;
 }
 .intro h1 {
-    transition: 2s;
+    transition: 1s;
 }
 .intro h1:hover {
     /* color: #efefef; */
     color: var(--secondary-title-text-color-and-preamble-color);
-    transition: 2s;
+    transition: 1s;
 }
 .summary {
     max-width: 600px;
