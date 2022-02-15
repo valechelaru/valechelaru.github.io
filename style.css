@@ -85,12 +85,23 @@ nav {
     text-align: center;
 }
 .intro h1 {
-    transition: 1s;
-}
-.intro h1:hover {
-    /* color: #efefef; */
-    color: var(--secondary-title-text-color-and-preamble-color);
-    transition: 1s;
+    /* transition: 1s; */
+    animation-duration: 8s;
+    animation-name: colorchange;
+    animation-iteration-count: infinite;
+    background-image: linear-gradient(
+        0.25turn,
+        #e66465,
+        #9198e5,
+        #e66465
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .summary {
     max-width: 600px;
@@ -202,4 +213,10 @@ input:checked + .slider:before {
 
 .vc-twitter, .vc-github {
     font-size: 2em;
+}
+
+@keyframes colorchange {
+    to {
+        background-position: 200% center;
+    }
 }
