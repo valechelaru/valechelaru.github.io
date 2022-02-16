@@ -1,7 +1,8 @@
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-if (sessionStorage.getItem("darkmode") == true) {
+if (sessionStorage.getItem("darkmode") === 'true') {
     document.documentElement.setAttribute('data-theme', 'dark');
+    toggleSwitch.toggleAttribute("checked");
 }
 
 function switchTheme(e) {

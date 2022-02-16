@@ -98,7 +98,6 @@ nav {
     background-clip: border-box;
     background-size: 200% auto;
     background-clip: text;
-    text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -193,7 +192,7 @@ input:checked + .slider:before {
 }
 
 @keyframes colorchange {
-    to {
+    /* to {
         background-position: 200% center;
-    }
+    } */
 }
