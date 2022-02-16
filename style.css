@@ -135,6 +135,9 @@ footer {
     transition: .6s;
     border-radius: 34px;
 }
+.post {
+    text-align: justify;
+}
 
 .navbar {
     overflow: hidden;
@@ -202,6 +205,11 @@ input:checked + .slider:before {
 
 .vc-twitter, .vc-github {
     font-size: 2em;
+}
+
+.vc-post {
+    color: var(--primary-text-color);
+    text-decoration: none;
 }
 
 @keyframes colorchange {
