@@ -1,40 +1,32 @@
 :root {
-    --bg-color-body: #fdfdfd;
-    --bg-color-navbar: #dadada;
-    --bg-color-header: #e6e6e6;
-    --bc-color-slider: #ccc;
+    --bg-color-body: #f5f5f5;
+    --bg-color-navbar: #e5e5e5;
+    --bc-color-slider: rgb(173, 173, 173);
     --bc-color-slider-before: #fff;
-    --primary-text-color: #003B4A;
-    --secondary-title-text-color-and-preamble-color: #f1f1f1;
+    --primary-text-color: #003441;
     --primary-link-color: #bb0000;
     --secondary-link-color: rgb(96, 112, 116);
 }
 [data-theme="dark"] {
     --bg-color-body: #2b2b2b;
-    --bg-color-navbar: #1b292c;
-    --bg-color-header: #24373b;
+    --bg-color-navbar: #1f1f1f;
     --bc-color-slider: rgb(54, 54, 54);
     --bc-color-slider-before: rgb(68, 68, 68);
     --primary-text-color: #dbdbdb;
-    --secondary-title-text-color-and-preamble-color: #202020;
     --primary-link-color: #bb0000;
     --secondary-link-color: rgb(176, 201, 207);
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    /* padding: 0;
-    margin: 0; */
 }
 
 body {
     margin: 0;
     padding-bottom: 2em;
-    /* font-family: 'Sen', sans-serif; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
-    /* color: #003B4A; */
     color: var(--primary-text-color);
     background-color: var(--bg-color-body);
     transition: 1s;
@@ -49,33 +41,27 @@ h1 {
 }
 h2 {
     margin: 0;
-    /* text-transform: uppercase; */
 }
 h3 {
     font-size: 2.5rem;
 }
 a {
-    /* color: #bb0000; */
     color: var(--primary-link-color);
-    transition: .4s;
+    transition: 1s;
 }
 a:hover,
 a:focus {
-    /* color: rgb(96, 112, 116); */
     color: var(--secondary-link-color);
 }
 header {
     width: 100%;
-    /* background: #92DFF1; */
-    background: var(--bg-color-header);
+    background: var(--bg-color-body);
     text-align: center;
     padding: 1em 0;
     transition: 1s;
 }
 nav {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    padding: 20px 50px;
+    padding: 12px 40px;
     background: var(--bg-color-navbar);
     transition: 1s;
     box-shadow: 0px 0px 10px;
@@ -85,8 +71,7 @@ nav {
     text-align: center;
 }
 .intro h1 {
-    /* transition: 1s; */
-    animation-duration: 8s;
+    animation-duration: 32s;
     animation-name: colorchange;
     animation-iteration-count: infinite;
     background-image: linear-gradient(
@@ -113,11 +98,9 @@ nav {
 }
 .preamble {
     margin: 0 auto;
-    /* background: #efefef; */
-    background: var(--secondary-title-text-color-and-preamble-color);
+    background: var(--bg-color-body);
     padding: 3em 2em;
     margin-bottom: 4em;
-    /* columns: 20em; */
     transition: 1s;
 }
 .main {
@@ -127,7 +110,7 @@ nav {
 .navbar {
     overflow: hidden;
     padding: 0px 0px 15px 0px;
-    background: var(--bg-color-header);
+    background: var(--bg-color-body);
     transition: 1s;
 }
 
@@ -146,7 +129,6 @@ nav {
     display: none;
 }
 .slider {
-    /* background-color: #ccc; */
     background-color: var(--bc-color-slider);
     bottom: 0;
     cursor: pointer;
@@ -157,7 +139,6 @@ nav {
     transition: .4s;
 }
 .slider::before {
-    /* background-color: #fff; */
     background-color: var(--bc-color-slider-before);
     bottom: 5px;
     content: "";
@@ -182,7 +163,6 @@ input:checked + .slider:before {
 
 @media (min-width: 700px) {
     .wrapper {
-        /* display: flex; */
         flex-wrap: wrap;
     }
     .main {
@@ -196,7 +176,6 @@ input:checked + .slider:before {
         width: 60px;
     }
     .slider::before {
-        /* background-color: #fff; */
         background-color: var(--bc-color-slider-before);
         bottom: 4px;
         content: "";
