@@ -121,6 +121,7 @@ nav {
     padding: 2rem;
     background: var(--bg-color-body);
     transition: 1s;
+    border-radius: 34px;
 }
 .main-wrapper {
     /* background-color: var(--bg-color-body);
