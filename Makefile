@@ -1,7 +1,9 @@
 
 timestamp = "$$(date)"
 
-upload: darkmodetoggle.js index.html style.css Makefile
+topdir = darkmodetoggle.js index.html style.css Makefile
+
+upload: $(topdir)
 	git add -A
 	git commit -m $(timestamp)
 	git push
