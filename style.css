@@ -4,7 +4,7 @@
     --bc-color-slider: rgb(173, 173, 173);
     --bc-color-slider-before: #fff;
     --primary-text-color: #003441;
-    --primary-link-color: #bb0000;
+    --primary-link-color: #e40303;
     --secondary-link-color: rgb(96, 112, 116);
 }
 [data-theme="dark"] {
@@ -13,7 +13,7 @@
     --bc-color-slider: rgb(54, 54, 54);
     --bc-color-slider-before: rgb(17, 17, 17);
     --primary-text-color: #dbdbdb;
-    --primary-link-color: #bb0000;
+    --primary-link-color: #e40303;
     --secondary-link-color: rgb(176, 201, 207);
 }
 
