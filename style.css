@@ -11,7 +11,7 @@
     --bg-color-body: #2b2b2b;
     --bg-color-navbar: #1f1f1f;
     --bc-color-slider: rgb(54, 54, 54);
-    --bc-color-slider-before: rgb(68, 68, 68);
+    --bc-color-slider-before: rgb(17, 17, 17);
     --primary-text-color: #dbdbdb;
     --primary-link-color: #bb0000;
     --secondary-link-color: rgb(176, 201, 207);
@@ -149,7 +149,7 @@ nav {
     width: 30px;
 }
 input:checked + .slider {
-    background-color: #66bb6a;
+    background-color: #1e62c9;
 }
 input:checked + .slider:before {
     transform: translateX(30px);

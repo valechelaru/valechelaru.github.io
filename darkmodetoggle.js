@@ -1,6 +1,6 @@
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-var darkmodestate = sessionStorage.getItem("darkmode")
+let darkmodestate = sessionStorage.getItem("darkmode")
 
 if (darkmodestate) {
     document.documentElement.setAttribute('data-theme', 'dark');
