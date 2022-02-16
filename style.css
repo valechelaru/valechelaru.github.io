@@ -6,8 +6,10 @@
     --primary-text-color: #242424;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(96, 112, 116);
-    --bg-gradient-color1: #e66465;
-    --bg-gradient-color2: #9198e5;
+    /* --bg-gradient-color1: #e66465;
+    --bg-gradient-color2: #9198e5; */
+    --bg-gradient-color1: teal;
+    --bg-gradient-color2: #1e62c9;
 }
 [data-theme="dark"] {
     --bg-color-body: #2b2b2b;
@@ -17,8 +19,10 @@
     --primary-text-color: #dbdbdb;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(176, 201, 207);
-    --bg-gradient-color1: #9198e5;
-    --bg-gradient-color2: #e66465;
+    /* --bg-gradient-color1: #9198e5;
+    --bg-gradient-color2: #e66465; */
+    --bg-gradient-color1: #1e62c9;
+    --bg-gradient-color2: teal;
 }
 
 *, *::before, *::after {
@@ -32,7 +36,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
     color: var(--primary-text-color);
-    background-color: var(--bg-gradient-color2);
+    background-color: var(--bg-gradient-color1);
     animation-duration: 32s;
     animation-name: colorchange;
     animation-iteration-count: infinite;
@@ -44,7 +48,7 @@ body {
     );
     background-size: auto auto;
     background-clip: border-box;
-    background-size: 200% auto;
+    background-size: 100% auto;
     transition: .6s;
 }
 h1, h3 {
@@ -104,7 +108,7 @@ footer {
     );
     background-size: auto auto;
     background-clip: border-box;
-    background-size: 200% auto;
+    background-size: 100% auto;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -122,7 +126,7 @@ footer {
     margin: 0 auto;
     background: var(--bg-color-body);
     padding: 1em 2em;
-    margin-bottom: 4em;
+    margin-bottom: 2.5em;
     transition: .6s;
 }
 .main {
