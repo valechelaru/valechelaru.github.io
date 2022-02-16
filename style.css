@@ -6,6 +6,8 @@
     --primary-text-color: #242424;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(96, 112, 116);
+    --bg-gradient-color1: #e66465;
+    --bg-gradient-color2: #9198e5;
 }
 [data-theme="dark"] {
     --bg-color-body: #2b2b2b;
@@ -15,6 +17,8 @@
     --primary-text-color: #dbdbdb;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(176, 201, 207);
+    --bg-gradient-color1: #9198e5;
+    --bg-gradient-color2: #e66465;
 }
 
 *, *::before, *::after {
@@ -28,20 +32,20 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
     color: var(--primary-text-color);
-    background-color: #9198e5;
+    background-color: var(--bg-gradient-color2);
     animation-duration: 32s;
     animation-name: colorchange;
     animation-iteration-count: infinite;
     background-image: linear-gradient(
         0.25turn,
-        #e66465,
-        #9198e5,
-        #e66465
+        var(--bg-gradient-color1),
+        var(--bg-gradient-color2),
+        var(--bg-gradient-color1)
     );
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
-    /* transition: .6s; */
+    transition: .6s;
 }
 h1, h3 {
     font-weight: 900;
@@ -76,7 +80,7 @@ nav {
     padding: 12px 40px;
     background: var(--bg-color-navbar);
     transition: .6s;
-    box-shadow: 0px 0px 10px;
+    box-shadow: 0px 0px 10px var(--bg-gradient-color2);
 }
 footer {
     padding-top: 0.8em;
@@ -94,9 +98,9 @@ footer {
     animation-iteration-count: infinite;
     background-image: linear-gradient(
         0.25turn,
-        #e66465,
-        #9198e5,
-        #e66465
+        var(--bg-gradient-color1),
+        var(--bg-gradient-color2),
+        var(--bg-gradient-color1)
     );
     background-size: auto auto;
     background-clip: border-box;
@@ -104,6 +108,7 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: .6s;
 }
 .summary {
     max-width: 600px;
