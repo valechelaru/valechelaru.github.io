@@ -212,6 +212,16 @@ input:checked + .slider:before {
     text-decoration: none;
 }
 
+.responsiveImg {
+    display: flex;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px;
+}
+
 @keyframes colorchange {
     /* to {
         background-position: 200% center;
