@@ -1,28 +1,24 @@
 :root {
-    --bg-color-body: #f5f5f5;
-    --bg-color-navbar: #e5e5e5;
+    --bg-color-body: #e5ded8;
+    --bg-color-navbar: #d6cfca;
     --bc-color-slider: rgb(173, 173, 173);
     --bc-color-slider-before: #fff;
-    --primary-text-color: #242424;
+    --primary-text-color: #252525;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(96, 112, 116);
-    /* --bg-gradient-color1: #e66465;
-    --bg-gradient-color2: #9198e5; */
-    --bg-gradient-color1: teal;
-    --bg-gradient-color2: #1e62c9;
+    --bg-gradient-color1: #d6cfca;
+    --bg-gradient-color2: #262626;
 }
 [data-theme="dark"] {
     --bg-color-body: #2b2b2b;
     --bg-color-navbar: #1f1f1f;
     --bc-color-slider: rgb(54, 54, 54);
     --bc-color-slider-before: rgb(17, 17, 17);
-    --primary-text-color: #dbdbdb;
+    --primary-text-color: #e5ded8;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(176, 201, 207);
-    /* --bg-gradient-color1: #9198e5;
-    --bg-gradient-color2: #e66465; */
-    --bg-gradient-color1: #1e62c9;
-    --bg-gradient-color2: teal;
+    --bg-gradient-color1: #262626;
+    --bg-gradient-color2: #d6cfca;
 }
 
 *, *::before, *::after {
@@ -37,18 +33,6 @@ body {
     line-height: 1.6;
     color: var(--primary-text-color);
     background-color: var(--bg-gradient-color1);
-    animation-duration: 32s;
-    animation-name: colorchange;
-    animation-iteration-count: infinite;
-    background-image: linear-gradient(
-        0.25turn,
-        var(--bg-gradient-color1),
-        var(--bg-gradient-color2),
-        var(--bg-gradient-color1)
-    );
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 100% auto;
     transition: .6s;
 }
 h1, h3 {
@@ -100,12 +84,7 @@ footer {
     animation-duration: 32s;
     animation-name: colorchange;
     animation-iteration-count: infinite;
-    background-image: linear-gradient(
-        0.25turn,
-        var(--bg-gradient-color1),
-        var(--bg-gradient-color2),
-        var(--bg-gradient-color1)
-    );
+    background-color: var(--bg-gradient-color2);
     background-size: auto auto;
     background-clip: border-box;
     background-size: 100% auto;
@@ -220,10 +199,4 @@ input:checked + .slider:before {
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 10px;
-}
-
-@keyframes colorchange {
-    /* to {
-        background-position: 200% center;
-    } */
 }
