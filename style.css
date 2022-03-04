@@ -81,9 +81,6 @@ footer {
     transition: .4s;
 }
 .intro h1 {
-    animation-duration: 32s;
-    animation-name: colorchange;
-    animation-iteration-count: infinite;
     background-color: var(--bg-gradient-color2);
     background-size: auto auto;
     background-clip: border-box;
@@ -91,6 +88,26 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: .4s;
+}
+.intro h2 {
+    background-color: var(--bg-gradient-color2);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 100% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .4s;
+}
+.intro p {
+    /* background-color: var(--bg-gradient-color2); */
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 100% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--bg-gradient-color2);
     transition: .4s;
 }
 .summary {
@@ -108,6 +125,26 @@ footer {
     margin-bottom: 2.5em;
     transition: .4s;
 }
+.preamble h3 {
+    /* background-color: var(--bg-gradient-color2); */
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 100% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--bg-gradient-color2);
+    transition: .4s;
+}
+.preamble p {
+    /* background-color: var(--bg-gradient-color2); */
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 100% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--bg-gradient-color2);
+    transition: .4s;
+}
 .main {
     padding: 2rem;
     background: var(--bg-color-body);
@@ -116,6 +153,26 @@ footer {
 }
 .post {
     text-align: justify;
+}
+.post h3 {
+    /* background-color: var(--bg-gradient-color2); */
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 100% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--bg-gradient-color2);
+    transition: .4s;
+}
+.post p {
+    /* background-color: var(--bg-gradient-color2); */
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 100% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--bg-gradient-color2);
+    transition: .4s;
 }
 
 .navbar {
