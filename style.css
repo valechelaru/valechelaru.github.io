@@ -1,46 +1,52 @@
 :root {
-    --bg-color-body: #e5ded8;
-    --bg-color-navbar: #d6cfca;
+    --bg-color-body: #fafafa;
+    --bg-color-navbar: #f5f5f5;
     --bc-color-slider: rgb(173, 173, 173);
     --bc-color-slider-before: #fff;
     --primary-text-color: #252525;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(96, 112, 116);
-    --bg-gradient-color1: #d6cfca;
+    --bg-gradient-color1: #f5f5f5;
     --bg-gradient-color2: #262626;
+    --highlighting-color: #c8e1ff;
 }
 [data-theme="dark"] {
     --bg-color-body: #2b2b2b;
     --bg-color-navbar: #1f1f1f;
     --bc-color-slider: rgb(54, 54, 54);
     --bc-color-slider-before: rgb(17, 17, 17);
-    --primary-text-color: #e5ded8;
+    --primary-text-color: #fafafa;
     --primary-link-color: #e40303;
     --secondary-link-color: rgb(176, 201, 207);
     --bg-gradient-color1: #262626;
-    --bg-gradient-color2: #d6cfca;
+    --bg-gradient-color2: #f5f5f5;
+    --highlighting-color: #1e62c9;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+::selection {
+    background: var(--highlighting-color);
+  }
+
 body {
     margin: 0;
     padding-bottom: 2em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: var(--primary-text-color);
     background-color: var(--bg-gradient-color1);
-    transition: .4s;
+    transition: 0s;
 }
 h1, h3 {
     font-weight: 900;
     line-height: 1;
 }
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0;
 }
 h2 {
@@ -51,7 +57,7 @@ h3 {
 }
 a {
     color: var(--primary-link-color);
-    transition: .4s;
+    transition: 0s;
 }
 a:hover,
 a:focus {
@@ -62,12 +68,12 @@ header {
     background: var(--bg-color-body);
     text-align: center;
     padding: 1em 0;
-    transition: .4s;
+    transition: 0s;
 }
 nav {
     padding: 12px 40px;
     background: var(--bg-color-navbar);
-    transition: .4s;
+    transition: 0s;
     box-shadow: 0px 0px 10px var(--bg-gradient-color2);
 }
 footer {
@@ -78,7 +84,7 @@ footer {
 .intro {
     text-align: center;
     background: var(--bg-color-body);
-    transition: .4s;
+    transition: 0s;
 }
 .intro h1 {
     background-color: var(--bg-gradient-color2);
@@ -88,7 +94,7 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: .4s;
+    transition: 0s;
 }
 .intro h2 {
     background-color: var(--bg-gradient-color2);
@@ -98,7 +104,7 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: .4s;
+    transition: 0s;
 }
 .intro p {
     /* background-color: var(--bg-gradient-color2); */
@@ -108,7 +114,7 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
-    transition: .4s;
+    transition: 0s;
 }
 .summary {
     max-width: 600px;
@@ -123,7 +129,7 @@ footer {
     background: var(--bg-color-body);
     padding: 1em 2em;
     margin-bottom: 2.5em;
-    transition: .4s;
+    transition: 0s;
 }
 .preamble h3 {
     /* background-color: var(--bg-gradient-color2); */
@@ -133,7 +139,7 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
-    transition: .4s;
+    transition: 0s;
 }
 .preamble p {
     /* background-color: var(--bg-gradient-color2); */
@@ -143,12 +149,12 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
-    transition: .4s;
+    transition: 0s;
 }
 .main {
     padding: 2rem;
     background: var(--bg-color-body);
-    transition: .4s;
+    transition: 0s;
     border-radius: 34px;
 }
 .post {
@@ -162,7 +168,7 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
-    transition: .4s;
+    transition: 0s;
 }
 .post p {
     /* background-color: var(--bg-gradient-color2); */
@@ -172,14 +178,14 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
-    transition: .4s;
+    transition: 0s;
 }
 
 .navbar {
     overflow: hidden;
     padding: 0px 0px 15px 0px;
     background: var(--bg-color-body);
-    transition: .4s;
+    transition: 0s;
 }
 
 /*Dark mode switch*/
