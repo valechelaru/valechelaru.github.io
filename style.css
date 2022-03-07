@@ -57,12 +57,11 @@ h3 {
 }
 a {
     color: var(--primary-link-color);
-    transition: 0s;
 }
-a:hover,
+/* a:hover,
 a:focus {
     color: var(--secondary-link-color);
-}
+} */
 header {
     width: 100%;
     background: var(--bg-color-body);
@@ -115,6 +114,10 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
     transition: 0s;
+}
+.intro p a {
+    color: var(--primary-link-color);
+    -webkit-text-fill-color: var(--primary-link-color);
 }
 .summary {
     max-width: 600px;
@@ -179,6 +182,9 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--bg-gradient-color2);
     transition: 0s;
+}
+.post p a {
+    -webkit-text-fill-color: var(--primary-link-color);
 }
 
 .navbar {
