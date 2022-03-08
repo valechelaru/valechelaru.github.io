@@ -1,6 +1,6 @@
 :root {
     --bg-color-body: #fafafa;
-    --bg-color-navbar: #f5f5f5;
+    --bg-color-navbar: #fafafa;
     --bc-color-slider: rgb(173, 173, 173);
     --bc-color-slider-before: #fff;
     --primary-text-color: #252525;
@@ -12,7 +12,7 @@
 }
 [data-theme="dark"] {
     --bg-color-body: #2b2b2b;
-    --bg-color-navbar: #1f1f1f;
+    --bg-color-navbar: #2b2b2b;
     --bc-color-slider: rgb(54, 54, 54);
     --bc-color-slider-before: rgb(17, 17, 17);
     --primary-text-color: #fafafa;
@@ -66,7 +66,7 @@ header {
     transition: 0s;
 }
 nav {
-    padding: 8px 40px;
+    padding: 14px 40px 14px 10px;
     background: var(--bg-color-navbar);
     transition: 0s;
     position: sticky;
@@ -83,7 +83,7 @@ footer {
 .header-outer {
     position: sticky;
     top: 0px;
-    height: 46px;
+    height: 62px;
     z-index: 999;
 }
 .header-name {
@@ -92,10 +92,26 @@ footer {
     text-align: center;
     padding: 30px 0px;
 }
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    flex-wrap: inherit;
+    text-align: center;
+    display: flex;
+    
+}
+.logo a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 40px;
+}
 .intro {
     text-align: center;
     background: var(--bg-color-body);
     transition: 0s;
+    padding-top: 20px;
 }
 .intro h1 {
     background-color: var(--bg-gradient-color2);
@@ -133,9 +149,9 @@ footer {
 .summary {
     max-width: 600px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     font-size: .95rem;
-    padding: 10px 0px;
+    padding: 0px 0px;
 }
 .preamble {
     margin: 0 auto;
@@ -192,11 +208,16 @@ footer {
 .post p a {
     -webkit-text-fill-color: var(--primary-link-color);
 }
+.post p a:hover {
+    text-decoration: none;
+}
 
 .navbar {
+    display: flex;
     overflow: hidden;
     background: var(--bg-color-body);
     transition: 0s;
+    justify-content: space-evenly;
 }
 
 /*Dark mode switch*/
@@ -256,8 +277,13 @@ input:checked + .slider:before {
     }
 }
 
-.vc-twitter, .vc-github {
-    font-size: 2em;
+.vc-frontpagelink {
+    font-size: 1.3em;
+    text-decoration: none;
+}
+.vc-frontpagelink:hover {
+    text-decoration: underline;
+    text-decoration-color: #e40303;
 }
 
 .vc-post {
