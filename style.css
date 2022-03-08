@@ -29,7 +29,7 @@
 
 ::selection {
     background: var(--highlighting-color);
-  }
+}
 
 body {
     margin: 0;
@@ -66,20 +66,39 @@ header {
     width: 100%;
     background: var(--bg-color-body);
     text-align: center;
-    padding: 1em 0;
+    padding: 0 0;
     transition: 0s;
 }
 nav {
-    padding: 12px 40px;
+    padding: 6px 40px;
     background: var(--bg-color-navbar);
     transition: 0s;
-    box-shadow: 0px 0px 10px var(--bg-gradient-color2);
+    /* box-shadow: 0px 0px 10px var(--bg-gradient-color2); */
+    position: sticky;
+    top: 0px;
 }
 footer {
     padding-top: 0.8em;
     text-align: center;
 }
 
+.wrapper {
+    top: 0px;
+}
+.header-outer {
+    /* display: flex; */
+    /* align-items: center; */
+    position: sticky;
+    top: 0px;
+    height: 46px;
+    z-index: 999;
+}
+.header-name {
+    height: auto;
+    padding: 0 0 0 0;
+    text-align: center;
+    padding: 30px 0px;
+}
 .intro {
     text-align: center;
     background: var(--bg-color-body);
@@ -123,9 +142,8 @@ footer {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    opacity: .8;
     font-size: .95rem;
-    padding: 0em 0;
+    padding: 10px 0px;
 }
 .preamble {
     margin: 0 auto;
@@ -189,7 +207,7 @@ footer {
 
 .navbar {
     overflow: hidden;
-    padding: 0px 0px 15px 0px;
+    /* padding: 0px 0px 15px 0px; */
     background: var(--bg-color-body);
     transition: 0s;
 }
