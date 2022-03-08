@@ -303,7 +303,7 @@ input:checked + .slider:before {
 }
 .vc-frontpagelink:hover {
     text-decoration: underline;
-    text-decoration-color: #e40303;
+    text-decoration-color: var(--primary-link-color);
 }
 
 .vc-post {
