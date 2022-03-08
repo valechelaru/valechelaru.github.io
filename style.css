@@ -140,7 +140,7 @@ footer {
 .preamble {
     margin: 0 auto;
     background: var(--bg-color-body);
-    padding: 1em 2em;
+    padding: 0.2em 2em;
     margin-bottom: 2.5em;
     transition: 0s;
 }
