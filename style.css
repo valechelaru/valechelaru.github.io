@@ -58,10 +58,6 @@ h3 {
 a {
     color: var(--primary-link-color);
 }
-/* a:hover,
-a:focus {
-    color: var(--secondary-link-color);
-} */
 header {
     width: 100%;
     background: var(--bg-color-body);
@@ -70,10 +66,9 @@ header {
     transition: 0s;
 }
 nav {
-    padding: 6px 40px;
+    padding: 8px 40px;
     background: var(--bg-color-navbar);
     transition: 0s;
-    /* box-shadow: 0px 0px 10px var(--bg-gradient-color2); */
     position: sticky;
     top: 0px;
 }
@@ -86,8 +81,6 @@ footer {
     top: 0px;
 }
 .header-outer {
-    /* display: flex; */
-    /* align-items: center; */
     position: sticky;
     top: 0px;
     height: 46px;
@@ -125,7 +118,6 @@ footer {
     transition: 0s;
 }
 .intro p {
-    /* background-color: var(--bg-gradient-color2); */
     background-size: auto auto;
     background-clip: border-box;
     background-size: 100% auto;
@@ -153,7 +145,6 @@ footer {
     transition: 0s;
 }
 .preamble h3 {
-    /* background-color: var(--bg-gradient-color2); */
     background-size: auto auto;
     background-clip: border-box;
     background-size: 100% auto;
@@ -163,7 +154,6 @@ footer {
     transition: 0s;
 }
 .preamble p {
-    /* background-color: var(--bg-gradient-color2); */
     background-size: auto auto;
     background-clip: border-box;
     background-size: 100% auto;
@@ -182,7 +172,6 @@ footer {
     text-align: justify;
 }
 .post h3 {
-    /* background-color: var(--bg-gradient-color2); */
     background-size: auto auto;
     background-clip: border-box;
     background-size: 100% auto;
@@ -192,7 +181,6 @@ footer {
     transition: 0s;
 }
 .post p {
-    /* background-color: var(--bg-gradient-color2); */
     background-size: auto auto;
     background-clip: border-box;
     background-size: 100% auto;
@@ -207,7 +195,6 @@ footer {
 
 .navbar {
     overflow: hidden;
-    /* padding: 0px 0px 15px 0px; */
     background: var(--bg-color-body);
     transition: 0s;
 }
