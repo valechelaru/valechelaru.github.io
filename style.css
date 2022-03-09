@@ -156,6 +156,7 @@ footer p {
     text-align: left;
     font-size: .95rem;
     padding: 0px 10px;
+    padding-bottom: 20px;
 }
 .summary h1 {
     text-align: center;
@@ -188,7 +189,7 @@ footer p {
 .main {
     padding: 2rem;
     padding-top: 5px;
-    background: var(--bg-color-body);
+    background: var(--bg-gradient-color1);
     transition: 0s;
     border-radius: 34px;
 }
