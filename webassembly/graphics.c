@@ -2,7 +2,7 @@ const unsigned int WIDTH = 600;
 const unsigned int HEIGHT = 600;
 unsigned int BUFFER[WIDTH * HEIGHT];
 
-void go() {
+void showCanvas() {
     unsigned int screen[HEIGHT][WIDTH];
     int x;
     for (x = 0; x < WIDTH; x++) {

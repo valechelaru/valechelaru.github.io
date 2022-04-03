@@ -320,4 +320,5 @@ input:checked + .slider:before {
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 10px;
+    border-radius: 10px;
 }
