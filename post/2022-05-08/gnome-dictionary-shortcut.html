@@ -41,7 +41,7 @@
 
             <div class="main supporting" id="cv-supporting" role="main">
 
-                <div class="post" id="vc-20200216" role="article">
+                <div class="post" id="vc-20220508" role="article">
                     <img src="gnome-dictionary-keyboard-shortcut.png" alt="Gnome dictionary showing the definition of keyboard shortcut" class="responsiveImg" title="The gnome dictionary showing the definition of keyboard shortcut.">
                     <p>The gnome desktop offers many little nifty programs. One of them I am really fond of is the <a href="https://wiki.gnome.org/Apps/Dictionary" target="_blank" rel="noopener noreferrer">gnome dictionary</a>. With the dictionary you can search for definitions and synonyms and it can even show you the meaning of words in different languages. I thought it would be great to have a keyboard shortcut to look up random words and definitions when browsing the web or writing documentation. So I set out to write a little script that opens up the gnome dictionary and searches for highlighted text. I will show you how to set it up yourself.</p>
                     <p>In order to get the highlighted text we will use <b>xclip</b> to put the text into the clipboard buffer. Afterwards we will use xclip to get the text and pass it along to <b>gnome-dictionary</b>. And this is basically already everything there is to it. </p>
