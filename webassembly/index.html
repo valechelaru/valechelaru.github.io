@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 12px;
+        }
+
+        canvas {
+            border: 2px solid #334155;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+            cursor: crosshair;
+        }
+
+        .hint {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+    <script type="module">
+        async function loadWasm(url) {
+            const response = await fetch(url);
+            if (WebAssembly.instantiateStreaming) {
+                try {
+                    return (await WebAssembly.instantiateStreaming(response.clone(), {})).instance;
+                } catch (err) {
+                    console.warn("Streaming compilation failed, falling back to ArrayBuffer.", err);
+                }
+            }
+            const bytes = await response.arrayBuffer();
+            return (await WebAssembly.instantiate(bytes, {})).instance;
+        }
+
+        async function init() {
+            const instance = await loadWasm("./bare_metal_wasm.wasm");
+            const wasm = instance.exports;
+            const width = 600;
+            const height = 600;
+
+            const canvas = document.getElementById("demo-canvas");
+            canvas.width = width;
+            canvas.height = height;
+
+            const bufferAddress = wasm.BUFFER.value;
+            const image = new ImageData(
+                new Uint8ClampedArray(
+                    wasm.memory.buffer,
+                    bufferAddress,
+                    4 * width * height,
+                ),
+                width,
+            );
+
+            const ctx = canvas.getContext("2d");
+
+            let keyMask = 0;
+            let mouseDX = 0;
+            let mouseDY = 0;
+
+            const KEY = {
+                w: 1,
+                s: 2,
+                a: 4,
+                d: 8,
+                jump: 16,
+                shift: 32, // sprint
+            };
+
+            function setBit(bit, on) {
+                if (on) keyMask |= bit;
+                else keyMask &= ~bit;
+            }
+
+            window.addEventListener("keydown", (e) => {
+                switch (e.code) {
+                    case "KeyW": setBit(KEY.w, true); break;
+                    case "KeyS": setBit(KEY.s, true); break;
+                    case "KeyA": setBit(KEY.a, true); break;
+                    case "KeyD": setBit(KEY.d, true); break;
+                    case "Space": setBit(KEY.jump, true); break;
+                    case "ShiftLeft":
+                    case "ShiftRight":
+                        setBit(KEY.shift, true); break;
+                    default: return;
+                }
+                e.preventDefault();
+            });
+
+            window.addEventListener("keyup", (e) => {
+                switch (e.code) {
+                    case "KeyW": setBit(KEY.w, false); break;
+                    case "KeyS": setBit(KEY.s, false); break;
+                    case "KeyA": setBit(KEY.a, false); break;
+                    case "KeyD": setBit(KEY.d, false); break;
+                    case "Space": setBit(KEY.jump, false); break;
+                    case "ShiftLeft":
+                    case "ShiftRight":
+                        setBit(KEY.shift, false); break;
+                    default: return;
+                }
+                e.preventDefault();
+            });
+
+            canvas.addEventListener("click", () => {
+                if (document.pointerLockElement !== canvas) {
+                    canvas.requestPointerLock();
+                }
+            });
+
+            window.addEventListener("pointerlockchange", () => {
+                mouseDX = 0;
+                mouseDY = 0;
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                if (document.pointerLockElement === canvas) {
+                    mouseDX += e.movementX;
+                    mouseDY += e.movementY;
+                }
+            });
+
+            function frame() {
+                wasm.setInput(keyMask, mouseDX, mouseDY);
+                wasm.showCanvas();
+                mouseDX = 0;
+                mouseDY = 0;
+                ctx.putImageData(image, 0, 0);
+                requestAnimationFrame(frame);
+            }
+
+            frame();
+        }
+
+        init().catch((err) => {
+            console.error("Failed to initialise the WASM demo:", err);
+            const hint = document.querySelector(".hint");
+            if (hint) {
+                hint.textContent = "Failed to load the WASM demo. Check the console for details.";
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <canvas id="demo-canvas" width="600" height="600"></canvas>
+    <div class="hint">Click the canvas to lock the mouse. Controls: WASD + mouse look, Space = jump, Shift = sprint.
+    </div>
+</body>
+
+</html>

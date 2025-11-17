@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="An easy way to use gnome-dictionary to look up any highlighted text in a gnome desktop environment unsing a custom keyboard shortcut.">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Valentin Chelaru - Gnome Dictionary Keyboard Shortcut</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../favicon.svg">
+</head>
+<script type="text/javascript" src="../../checkdarkmode.js"></script>
+
+<body id="valentin-chelaru">
+    <div class="wrapper">
+
+        <header class="header-outer" role="banner">
+            <div class="navbar">
+                <div class="logo-wrapper">
+                    <div class="logo">
+                        <a href="https://valentinchelaru.com">Valentin Chelaru</a>
+                    </div>
+                </div>
+                <nav>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="intro" id="vc-intro">
+            <div class="summary" id="vc-summary" role="article">
+                <h1>Gnome Dictionary Keyboard Shortcut</h1>
+            </div>
+
+            <div class="preamble" id="vc-preamble" role="article">
+            </div>
+        </section>
+
+        <div class="main supporting" id="cv-supporting" role="main">
+
+            <div class="post" id="vc-20220508" role="article">
+                <img src="gnome-dictionary-keyboard-shortcut.png"
+                    alt="Gnome dictionary showing the definition of keyboard shortcut" class="responsiveImg"
+                    title="The gnome dictionary showing the definition of keyboard shortcut.">
+                <p>The gnome desktop offers many little nifty programs. One of them I am really fond of is the <a
+                        href="https://wiki.gnome.org/Apps/Dictionary" target="_blank" rel="noopener noreferrer">gnome
+                        dictionary</a>. With the dictionary you can search for definitions and synonyms and it can even
+                    show you the meaning of words in different languages. I thought it would be great to have a keyboard
+                    shortcut to look up random words and definitions when browsing the web or writing documentation. So
+                    I set out to write a little script that opens up the gnome dictionary and searches for the
+                    highlighted text. I will show you how to set it up yourself.</p>
+                <p>In order to get the highlighted text we will use <b>xclip</b> to put the text into the clipboard
+                    buffer. Afterwards we will use xclip to get the text and pass it along to <b>gnome-dictionary</b>.
+                    And this is basically already everything there is to it. </p>
+                <script src="https://gist.github.com/valechelaru/a7d685d82309138789699f4e9ca798fd.js"></script>
+                <p>Now we only need to create a keyboard shortcut in the settings that executes the bash script and
+                    voilà! Using a shortcut you can now search for any word you can highlight in your gnome desktop. 🙂
+                </p>
+                <img loading="lazy" src="keyboard-shortcut.png" alt="Keyboard shortcut setup starting the script"
+                    class="responsiveImg" title="How to set up the keyboard shortcut pointing to the script.">
+            </div>
+
+            <footer>
+                <p role="contentinfo">© Valentin Chelaru</p>
+            </footer>
+
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../darkmodetoggle.js"></script>
+
+</html>

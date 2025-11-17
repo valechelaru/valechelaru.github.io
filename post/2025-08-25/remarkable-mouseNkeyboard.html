@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Transform your reMarkable tablet into both a virtual mouse and keyboard for your Linux desktop with real-time pen tracking and Type Folio support.">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Valentin Chelaru - reMarkable Mouse & Keyboard</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../favicon.svg">
+</head>
+<script type="text/javascript" src="../../checkdarkmode.js"></script>
+
+<body id="valentin-chelaru">
+    <div class="wrapper">
+
+        <header class="header-outer" role="banner">
+            <div class="navbar">
+                <div class="logo-wrapper">
+                    <div class="logo">
+                        <a href="https://valentinchelaru.com">Valentin Chelaru</a>
+                    </div>
+                </div>
+                <nav>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="intro" id="vc-intro">
+            <div class="summary" id="vc-summary" role="article">
+                <h1>reMarkable Mouse & Keyboard</h1>
+            </div>
+
+            <div class="preamble" id="vc-preamble" role="article">
+            </div>
+        </section>
+
+        <div class="main supporting" id="cv-supporting" role="main">
+
+            <div class="post" id="vc-20250825" role="article">
+                <img src="https://raw.githubusercontent.com/valechelaru/remarkable-mouseNkeyboard/refs/heads/main/images/remarkable.png"
+                    alt="reMarkable Mouse & Keyboard" class="responsiveImg"
+                    title="Using my reMarkable 2 as a virtual mouse and keyboard setup.">
+
+                <p>Have you ever wondered if you could use your reMarkable tablet as more than just a digital notepad? I
+                    certainly did, and that curiosity led me to create a toolkit that transforms your reMarkable into
+                    both a virtual mouse and keyboard for your Linux desktop!</p>
+
+                <p>The project consists of two Python tools that work in tandem or independently. The <strong>reMarkable
+                        Mouse</strong> creates a virtual input device that translates pen movements and touches into
+                    precise mouse events, while the <strong>reMarkable Keyboard</strong> brings full Type Folio keyboard
+                    functionality to your desktop. The combination is surprisingly natural to use - you can hover the
+                    pen above the tablet surface to move the cursor, touch to click, and type normally on the Type
+                    Folio, all while your reMarkable seamlessly integrates with your Linux workflow.</p>
+
+                <p>Under the hood, both tools work by establishing an SSH connection to your reMarkable tablet and
+                    reading input events in real-time. The mouse tool reads pen input from
+                    <code>/dev/input/event1</code> and creates a virtual mouse device that translates tablet coordinates
+                    to screen coordinates with proper aspect ratio preservation. The keyboard tool monitors
+                    <code>/dev/input/event3</code> for Type Folio events and forwards them directly to a virtual
+                    keyboard device. What I find particularly neat is that the default orientation is now flipped to
+                    work perfectly with the Type Folio - no more awkward hand positioning!
+                </p>
+
+                <p>The experience feels surprisingly responsive, whether you're using it for presentations, digital art,
+                    or just as a unique input method. I've tested it extensively on both Wayland and X11 under Ubuntu,
+                    and it works great with the reMarkable 2 (the keyboard functionality obviously requires the Type
+                    Folio for reMarkable 2). The SSH connection over USB provides the best performance, but WiFi works
+                    perfectly fine too for most use cases.</p>
+
+                <p>You can find the complete toolkit on <a
+                        href="https://github.com/valechelaru/remarkable-mouseNkeyboard" target="_blank"
+                        rel="noopener noreferrer">GitHub</a> with detailed installation instructions, usage examples,
+                    and all the source code. Installation is straightforward - just download the scripts or clone the
+                    repository, install <code>python3-evdev</code>, and you're ready to go. I've included various
+                    configuration options for sensitivity, scaling, and orientation to make it work perfectly with your
+                    setup.</p>
+            </div>
+
+            <footer>
+                <p role="contentinfo">© Valentin Chelaru</p>
+            </footer>
+
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../darkmodetoggle.js"></script>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Small little gnome indicator applet I build myself one afternoon to make my life easier. Using python and bash scripts with minimal dependencies.">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Valentin Chelaru - Airpods Gnome AppIndicator</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../favicon.svg">
+</head>
+<script type="text/javascript" src="../../checkdarkmode.js"></script>
+
+<body id="valentin-chelaru">
+    <div class="wrapper">
+
+        <header class="header-outer" role="banner">
+            <div class="navbar">
+                <div class="logo-wrapper">
+                    <div class="logo">
+                        <a href="https://valentinchelaru.com">Valentin Chelaru</a>
+                    </div>
+                </div>
+                <nav>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="intro" id="vc-intro">
+            <div class="summary" id="vc-summary" role="article">
+                <h1>Airpods GNOME AppIndicator</h1>
+            </div>
+
+            <div class="preamble" id="vc-preamble" role="article">
+            </div>
+        </section>
+
+        <div class="main supporting" id="cv-supporting" role="main">
+
+            <div class="post" id="vc-20220216" role="article">
+                <img src="airpods-appindicator.png" alt="Airpods AppIndicator" class="responsiveImg"
+                    title="The Airpods AppIndicator Icon and Menu.">
+                <p>One afternoon I got really annoyed. I had to constantly switch between using my phone and my laptop
+                    as a source for audio. Apple makes it of couse very easy when jumping from Apple device to Apple
+                    device if they are connected to the same icloud account. But when you are using a iPhone and a Linux
+                    machine it sadly does look very different.</p>
+                <p>As I was starring at the same bluetooth settings for the n-th time that day I remembered that I had
+                    once written a simple bash script that I used to connect to an old pair of bluetooth headphones.</p>
+                <script src="https://gist.github.com/valechelaru/f3282fa4614eedba0dc26536c38fbccc.js"></script>
+                <p>A fairly primitive script that spams the <b>bluetoothctl connect</b> command in a while loop until
+                    the connection with the device is established. If you want to use the script you will of course have
+                    to edit it and put in the MAC adress of your device (instead of 00:00:00:00:00:00).</p>
+                <p>Using only the <b>bluetoothctl connect</b> command should only work when the device was already
+                    connected at least one time before. Else we have to pair and trust our bluetooth device manually
+                    before being able to connect to it.</p>
+                <p>Using this script as a basis we can create an indicator applet for the GNOME desktop in python. The
+                    python script will create an handy little appindicator. By interacting with the extension we can
+                    execute our bash script from above and connect and disconnect from our Airpods more easily. Before
+                    we can do that we have to install the python bindings for AppIndicator. In Ubuntu this would be
+                    <b>gir1.2-appindicator3</b>. The suffix 3 means that this version supports GTK3 based applications.
+                </p>
+                <script src="https://gist.github.com/valechelaru/85b6dc499ad6504e67a78ab82e8b4fca.js"></script>
+                <p>This python script creates the appindicator in the <b>main()</b> routine by calling
+                    <b>Indicator.new()</b>. In <b>build_menu()</b> we create the GTK3 menu and add the different items
+                    that trigger our scripts. The most important menu items are 'Connect Airpods' and 'Disconnect
+                    Airpods'. It connects the menue items to the <b>connect()</b> and <b>disconnect()</b> routines. When
+                    the functions are called by the menu callback they invoke <b>try_connect()</b> and
+                    <b>try_disconnect()</b> respectively. The <b>notify.Notifications.new()</b> waits for the function
+                    to return a result in form of a string. The <b>try_connect()</b> function starts our bash script
+                    from before by creating a subprocess. The output of subprocess is the result of the bash script and
+                    by checking this output then a 'Connection successful!' or a 'Connection failed!' is returned to the
+                    <b>connect()</b> routine. The <b>Notification.new()</b> function then creates a GNOME notification
+                    displaying this string.
+                </p>
+                <img loading="lazy" src="airpods-connected.png" alt="Airpods Connected Notification"
+                    class="responsiveImg" title="Notification when the Airpods are connected successfully.">
+                <p>It works the same way with the disconnect routine.</p>
+                <img loading="lazy" src="airpods-disconnected.png" alt="Airpods Disconnected Notification"
+                    class="responsiveImg" title="Notification when the Airpods are disconnected successfully.">
+                <p>For the sake of simplicity a different bash script is called. It can therefore look very simple:</p>
+                <script src="https://gist.github.com/valechelaru/a6df3216baa34ec67e4fdf58e6435812.js"></script>
+                <p>Another small detail is, that the GNOME notification can carry our own icon (this is in this case
+                    'airpods_icon.svg'). There ist also the possibility to use our own icon for our extension to be
+                    displayed as our AppIndicator icon. In this example it is called 'airpods_icon_alt.svg'. You will
+                    find both of these in the repository I will link to.</p>
+                <p>The way I have this set up on my machine is, that the python script starts up automaticaly as an
+                    Startup Application. This can be done by creating an entry in the Startup Applications Preferences.
+                    For this to work properly the scripts need to be made executable (<b>chmod +x
+                        <em>SCRIPTNAME</em></b>).</p>
+                <img loading="lazy" src="startup-application.png" alt="Startup Application" class="responsiveImg"
+                    title="How to get the AppIndicator to start with bootup.">
+                <p>This works for me like a charm and I hope you will enjoy this too. After disconnecting the Airpods
+                    form my Linux box they even reconnect automaticaly by some magic back to my iPhone. The whole
+                    project with all the needed files can be found in my <a
+                        href="https://github.com/valechelaru/airpods_appindicator" target="_blank"
+                        rel="noopener noreferrer">repository on github</a>.</p>
+                <p>For all that are struggeling to get decent sound quality out of their Airpods using Linux this post
+                    by <a href="https://dominik.wombacher.cc/posts/apple-airpods-on-linux.html" target="_blank"
+                        rel="noopener noreferrer">Wombelix</a> has helped me out a lot!</p>
+            </div>
+
+            <footer>
+                <p role="contentinfo">© Valentin Chelaru</p>
+            </footer>
+
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../darkmodetoggle.js"></script>
+
+</html>
